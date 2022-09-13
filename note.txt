@@ -1,0 +1,19 @@
+implementare vector, map e stack
+
+capire bene come e'fatta la std
+
+creare gli iteratori
+
+vector (sequence container)
+  * il pushback inizializza un nuovo vector se esiste ma non inizializzato (e mette un nuovo elemento in fondo)
+  * unica eccezione possibile: bad_alloc
+
+
+
+map (associative container)
+stack (container adaptor)
+iteratori
+
+
+std::allocator
+	stardard allocator usato da ogni container della std se non ne vengono specificati altri. 
