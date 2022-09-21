@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <memory>		//libreria di allocator
+# include <string>		
 
 template<typename T>
 class Vector1
@@ -14,28 +15,24 @@ public:
 	{
 		std::allocator<T> alloc;
 		this->_array = alloc.allocate(_size);
-		//non penso si debba creare un array vuoto
-		//this->_array = std::allocator.allocate<T>(size);
-		//if (Vector1::verbose)
-			std::cout << "Costruttore: Vettore vuoto creato" << std::endl;
+
+		std::cout << "Costruttore: Vettore vuoto creato" << std::endl;
 		return;
 	}
 	Vector1<T>( const unsigned int size ): _size(size)
 	{
 		std::allocator<T> alloc;
 		this->_array = alloc.allocate(_size);
-
-		//forse l'eccezione la throwa allocator
-			// if (size < 0)
-			// 	throw std::overflow_error("Index out of bounds");
+			
 		//if (Vector1::verbose)
 			std::cout << "Costruttore: Vettore di " << size << " elementi creato" << std::endl;
 	}
 	Vector1<T>( const Vector1<T> &src ) { *this = src; }
-	~Vector1<T>( void )
+	~Vector1( void )
 	{
 		//std::allocator.deallocate(_array);
 		// std::allocator.deallocate(->this);
+		//std::allocator.destruct
 		//if (Vector1::verbose)
 			std::cout << "Distruttore chiamato" << std::endl;
 	}
